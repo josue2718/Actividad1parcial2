@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Calendario con Bootstrap</title>
+    <link rel="stylesheet" href="index.css" >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+</head>
+<body>
+    
+        <h1>Tareas Pendientes </h1>
+        <div class="alert alert-danger fixed-top" role="alert" id="alerta" style="display: none;">
+            La fecha de finalización ya ha pasado, no se puede completar la tarea.
+            
+        </div>
+        <div class="alert alert-danger fixed-top" role="alert" id="alerta2" style="display: none;">
+           Fechas incorrectas
+        </div>
+        <div  class="alert alert-success fixed-top " role="alert" id="alerta3" style="display: none;">
+            Agregado Con Exito
+         </div>
+        <div class="container-fluid">
+            <form class="form-row align-items-center w-100" id="Guardartarea">
+                <div class="col-auto mb-3 mr-5">
+                    <label for="Tarea" class="form-label"  required>Nueva Tarea</label>
+                    <input type="text" class="form-control" id="tareas" placeholder="Nueva Tarea" required>
+                </div>
+                <div class="col-auto mb-3 mr-5">
+                    <label for="start" class="form-label tex">Fecha De Inicio</label>
+                    <div class="input-group">
+                        <input type="text" id="start" class="form-control"  placeholder="Selecciona una fecha" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto mb-3 mr-5">
+                    <label for="end" class="form-label">Fecha De Fin</label>
+                    <div class="input-group">
+                        <input type="text" id="end" class="form-control" placeholder="Selecciona una fecha" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto mb-3 mr-3">
+                    <label for="Responsable" class="form-label">Responsable</label>
+                    <input type="text" class="form-control" id="responsable" placeholder="Responsable" required>
+                </div>
+                <div class="col-auto mb-1">
+                    <button type="submit" class="btn btn-outline-primary mt-1">Agregar Tarea</button>
+                </div>
+            </form>
+        </div>
+        <br>
+     <div class="container-fluid">
+                <form class="form-row align-items-center w-100">
+                    <div class="col-auto mb-3 mr-5">
+                         <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filtros
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item" type="button" onclick="mostrarTareas('todas')">Todas</button>
+                                <button class="dropdown-item" type="button" onclick="mostrarTareas('completadas')">Completadas</button>
+                                <button class="dropdown-item" type="button" onclick="mostrarTareas('vencidas')">Vencidas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 mb-3 mr-1">
+                        <input type="text" id="buscarTareaInput" class="form-control" placeholder="Buscar por nombre de tarea">
+                    </div>
+                    <div class="col-auto mb-3 mr-1">
+                        <button class="btn btn-outline-primary btn-sm" type="button" onclick="buscarPorNombre()">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        <table class="table table-hove mt-1">
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
+                    <th>Responsable</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="listaTareas">
+            </tbody>
+        </table>
+        <!-- Ejemplo de botones de filtro -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+     <script src="index.js"></script>
+</body>
+</html>

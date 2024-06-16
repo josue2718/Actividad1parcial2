@@ -1,0 +1,22 @@
+h1 {
+    margin-top: 0%;
+    font-size: 24px;
+    color: #fffffff5;
+    text-align: center;
+    background-color: #021e3a;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+label
+{
+    font-size: 17px;
+    color: #0050a0f8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+th
+{
+    font-size: 17px;
+    color: #0050a0f8;
+    font-family: Arial, Helvetica, sans-serif;
+}
